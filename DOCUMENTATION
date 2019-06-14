@@ -1,0 +1,48 @@
+DOCUMENTATION
+
+FILES  :
+
+db_remote :
+	db_remote.sln : Can be opened in MonoDevelop(linux based platform) or Visual Studio(Windows based platform).
+
+db_remote>remote>bin>Debug :
+	remote.exe : Execute this to obtain the GUI and start with the decode.
+
+db_remote>remote>bin>Debug>IR_Decoder :
+	constants.h : 
+		Contains the definitions of the protocols ID, names of the protocols corresponding to the protocol IDs, constants of each protocol defining the number of frequency cycles in the marks and spaces present in the signal
+	cpp_code.h :
+		library file with the list of funtions
+	db_decoder.cpp :
+		Contains definitions of all the functions used to decode the IR signal
+	decoder.so :
+		Shared library imported to the C# solution
+
+CODE FLOW:
+
+> Execute remote.exe (sudo mono remote.exe)
+> Imports from decoder.so (from db_remote>remote>bin>Debug>IR_Decoder) the funtions code() and create_insert()
+> GUI is opened. 
+> For every key press: 
+> assign() //Form1.cs
+	> code() //db_decoder.cpp
+		- returns the the code of the IR signal
+		> The PIGPIO library is initialized
+		> init() //db_decoder.cpp
+			- initializes the values of the varialbes like sensor_pin,pin_callback
+		> enable() //db_decoder.cpp
+			> pin_callback_entry() //db_decoder.cpp
+				- creates the buffer holding the timing information of the marks and spaces present in the IR signal
+		> analyse_ir_pulses() //db_decoder.cpp
+			> decode_ir_sequence() //db_decoder.cpp
+				- creates a buffer which holds the difference between two consecutive ticks thus giving the timing of each mark and space
+				- calculates the frequency
+				- creates a buffer with the values of number of cycles of frequency present in the marks and spaces of the IR signal
+				- based on the frequency calculated it calls the respective protocol decode functions
+				> _try_decode_nec() //db_decoder.cpp
+					- it compares the values in the buffer with the values present in constants.h.
+					- if they match then the result is calulated and returned
+	> create_insert() //db_decoder.cpp
+		- inserts the IR code obtained with its respective key_ID in a Database
+> waits for the next key press
+
