@@ -1,0 +1,9 @@
+/home/pi/db_remote/remote/bin/Debug/remote.exe.config
+/home/pi/db_remote/remote/bin/Debug/remote.exe
+/home/pi/db_remote/remote/bin/Debug/remote.pdb
+/home/pi/db_remote/remote/obj/Debug/remote.csprojAssemblyReference.cache
+/home/pi/db_remote/remote/obj/Debug/remote.Properties.Resources.resources
+/home/pi/db_remote/remote/obj/Debug/remote.csproj.GenerateResource.cache
+/home/pi/db_remote/remote/obj/Debug/remote.csproj.CoreCompileInputs.cache
+/home/pi/db_remote/remote/obj/Debug/remote.exe
+/home/pi/db_remote/remote/obj/Debug/remote.pdb

@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{A4E66B71-B196-4C74-ABB7-6C568724D79C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="remote/Form1.cs">
+    <Files>
+      <File FileName="remote/Form1.cs" Line="24" Column="3" />
+      <File FileName="remote/Form1.Designer.cs" Line="663" Column="23" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.remote PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
